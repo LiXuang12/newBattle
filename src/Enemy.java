@@ -8,13 +8,16 @@ public class Enemy {
     private int enemyDefend;
     private int enemyHealth;
     private Character player;
+    private boolean isDefending;
 
-    public Enemy(String enemyName, int enemyAttack, int enemyDefend, int enemyHealth, int enemyWeight, Character player2){
+    public Enemy(String enemyName, int enemyAttack, int enemyDefend, int enemyHealth, int enemyWeight, Character player, boolean isDefending){
         this.enemyName = enemyName;
         this.enemyAttack = enemyAttack;
         this.enemyDefend = enemyDefend;
         this.enemyHealth = enemyHealth;
         this.enemyWeight = enemyWeight;
+        this.player = player;
+        this.isDefending = false;
     }
 
     public void enemyInfo(){
@@ -28,16 +31,16 @@ public class Enemy {
     public int getAttack() {
         return enemyAttack;
     }
+    
+    public String getEnemyName() {
+        return enemyName;
+    }
 
     public void getDamage(int damage) {
         enemyHealth -= damage;
         if (enemyHealth < 0) {
             enemyHealth = 0;
         }
-    }
-
-    public String getEnemyName() {
-        return enemyName;
     }
 
     public void attack(Character player) {
@@ -48,11 +51,12 @@ public class Enemy {
             damage = enemyAttack;
         }
         player.reduceHealth(damage);
-        System.out.println(enemyName + " attacks " + player.getName() + " and deals " + damage + " damage.");
+        System.out.println("\nEnemy : "+ enemyName + " attacks " + player.getName() + " and deals " + damage + " damage.");
     }
 
     public void defend(){
-
+        isDefending = true;
+        System.out.println(enemyName + "is defending");
     }
     public void setPlayer(Character player) {
         this.player = player;

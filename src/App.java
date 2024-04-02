@@ -29,7 +29,7 @@ public class App {
 
         // Enemy Stat
         System.out.println("\nEnemy Stats:");
-        Enemy enemy = new Enemy("Goblin", 90, 100, 100, 150, player);
+        Enemy enemy = new Enemy("Goblin", 90, 100, 100, 150, player, true);
         enemy.enemyInfo();
 
         // Memulai pertarungan
