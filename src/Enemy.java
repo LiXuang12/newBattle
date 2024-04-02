@@ -31,7 +31,7 @@ public class Enemy {
     public int getAttack() {
         return enemyAttack;
     }
-    
+
     public String getEnemyName() {
         return enemyName;
     }
@@ -44,15 +44,17 @@ public class Enemy {
     }
 
     public void attack(Character player) {
-        int damage = 0;
-        if (player.isDefend()) {
-            damage = Math.max(0, enemyAttack - player.getDefend());
-        } else {
-            damage = enemyAttack;
-        }
-        player.reduceHealth(damage);
-        System.out.println("\nEnemy : "+ enemyName + " attacks " + player.getName() + " and deals " + damage + " damage.");
+    int damage = 0;
+    if (player.isDefend()) {
+        damage = Math.max(0, enemyAttack - player.getDefend());
+    } else {
+        damage = enemyAttack;
     }
+    player.reduceHealth(damage);
+    System.out.println(enemyName + " attacks " + player.getName() + " and deals " + damage + " damage.");
+    System.out.println(player.getName() + " Health: " + player.getHealth()); // Menampilkan kesehatan karakter setelah menerima serangan
+}
+
 
     public void defend(){
         isDefending = true;

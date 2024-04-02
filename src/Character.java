@@ -150,5 +150,9 @@ private boolean defending;
     public void setWeaponName(String weaponName) {
         this.weaponName = weaponName;
     }
+
+    public int getHealth() {
+        return health;
+    }
     
 }
