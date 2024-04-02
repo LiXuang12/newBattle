@@ -109,28 +109,36 @@ private boolean defending;
     public void heal(int plusHealth) {
        health += plusHealth;
     }
+
     public int getWeight() {
         return weight;
     }
+
     public String getName(){
         return name;
     }
+
     public String getArmorType(){
         return armorType;
     }
+
     public void reduceHealth(int damage) {
         health -= damage;
         health = 0;
     }
+
     public void defend(){
         this.defending = true;
     }
+
     public void endDefend() {
         this.defending = false;
     }
+
     public boolean isDefend() {
         return defending;
     }
+    
     public int getDefend(){
         if (defending) {
             return defend; 

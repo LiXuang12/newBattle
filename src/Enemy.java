@@ -47,7 +47,8 @@ public class Enemy {
     int damage = 0;
     if (player.isDefend()) {
         damage = Math.max(0, enemyAttack - player.getDefend());
-    } else {
+    } 
+    else {
         damage = enemyAttack;
     }
     player.reduceHealth(damage);
@@ -58,11 +59,13 @@ public class Enemy {
 
     public void defend(){
         isDefending = true;
-        System.out.println(enemyName + "is defending");
+        System.out.println(enemyName + " is defending");
     }
+
     public void setPlayer(Character player) {
         this.player = player;
     }
+
     public void enemyMove() {
         Random enemyTactic = new Random();
         int moveEnemy = enemyTactic.nextInt(2);
