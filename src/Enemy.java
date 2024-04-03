@@ -52,14 +52,18 @@ public class Enemy {
         damage = enemyAttack;
     }
     player.reduceHealth(damage);
+    System.out.println("\n");
     System.out.println(enemyName + " attacks " + player.getName() + " and deals " + damage + " damage.");
+    System.out.println("\n");
     System.out.println(player.getName() + " Health: " + player.getHealth()); // Menampilkan kesehatan karakter setelah menerima serangan
 }
 
 
     public void defend(){
         isDefending = true;
+        System.out.println("\n");
         System.out.println(enemyName + " is defending");
+        System.out.println("\n");
     }
 
     public void setPlayer(Character player) {

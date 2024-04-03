@@ -15,6 +15,7 @@ public class Battle {
             damage = 0;
         }
         enemy.getDamage(damage);
+        System.out.println("\n");
         System.out.println(player.getName() + " attack the " + enemy.getEnemyName() + " goblin and deal " + damage + " damage");
     }
 
@@ -35,10 +36,12 @@ public class Battle {
             damage = 0;
         }
         player.reduceHealth(damage);
+        System.out.println("\n");
         System.out.println(enemy.getEnemyName() + " attacking " + player.getName() + " while defending");
     }
     
     public void potion() {
+        System.out.println("\n");
         System.out.println(player.getName() + " chooses to drink 'potion'");
         player.heal(30);
         System.out.println(player.getName() + " drinks potion and regenerates health by 30");
@@ -58,24 +61,24 @@ public class Battle {
             System.out.println("2. Defend");
             System.out.println("3. Drink Potion");
             System.out.println("4. Show " + player.getName() + " Stats");
-            System.out.print("Input number: ");
+            System.out.print("\nInput number: ");
             int movement = whatChoice.nextInt();
     
             switch (movement) {
                 case 1:
-                    System.out.println(player.getName()+" You choose to 'attack'");
+                    System.out.println(player.getName()+"\n You choose to 'attack'");
                     attack();
                     validChoice = true;
                     break;
     
                 case 2:
-                    System.out.println(player.getName()+" choose to 'defend'");
+                    System.out.println(player.getName()+"\n choose to 'defend'");
                     defend();
                     validChoice = true;
                     break;
     
                 case 3:
-                    System.out.println(player.getName()+" choose to drink 'potion'");
+                    System.out.println(player.getName()+"\n choose to drink 'potion'");
                     potion();
                     validChoice = true;
                     break;
@@ -87,7 +90,7 @@ public class Battle {
                     break;
     
                 default:
-                    System.out.println("Invalid choice. Please choose again.");
+                    System.out.println("\nInvalid choice. Please choose again.");
                     break;
             }
     
@@ -103,13 +106,13 @@ public class Battle {
     
         // Setelah loop selesai, lakukan tindakan yang sesuai jika pertempuran berakhir
         if (!player.isAlive()) {
-            System.out.println("You have been defeated. Game over!");
+            System.out.println("\nYou have been defeated. Game over!");
         } 
         else if (!enemy.isAlive()) {
-            System.out.println("Congratulations! You have defeated the enemy.");
+            System.out.println("\nCongratulations! You have defeated the enemy.");
         } 
         else {
-            System.out.println("The battle ended unexpectedly."); // Pesan ini harusnya tidak muncul, kecuali ada bug
+            System.out.println("\nThe battle ended unexpectedly."); // Pesan ini harusnya tidak muncul, kecuali ada bug
         }
     }    
 }
