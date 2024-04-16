@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) {
         // Inisialisasi karakter
-        Character player = new Character("", "", 40, 100, 100, 150);
+        Character player = new Character("", "", 40, 100, 100, 220);
 
         System.out.println("\nCharacter information:");
         player.setCharacterInfoFromInput();
@@ -21,7 +21,7 @@ public class App {
         System.out.println("Weight: 40");
         System.out.println("Attack: 100");
         System.out.println("Defend: 100");
-        System.out.println("Health: 150");
+        System.out.println("Health: 220");
 
         // New Stat
         System.out.println("\nYour Stats:");
@@ -29,7 +29,7 @@ public class App {
 
         // Enemy Stat
         System.out.println("\nEnemy Stats:");
-        Enemy enemy = new Enemy("Goblin", 90, 100, 100, 150, player, true);
+        Enemy enemy = new Enemy("Goblin", 90, 100, 190, 150, player, true);
         enemy.enemyInfo();
 
         // Memulai pertarungan
